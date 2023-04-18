@@ -18,12 +18,24 @@
     }
 
     let x = 20;
+    let sentido = true;
 
     function actualizarPantalla(){
         limpiarPantalla();
         pincel.fillStyle = "lightgrey";
         pincel.fillRect(0, 0, 600, 400);
         disenarCircunferencia(x, 20, 10);
+        if (sentido) {
+            x++;
+        }
+        else{
+            x--;
+        }
+        if (x > 580){
+            sentido = false;
+        } else if(x < 20){
+            sentido = true;
+        }
     }
 
     setInterval(actualizarPantalla, 2);
